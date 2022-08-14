@@ -1,0 +1,20 @@
+#bids adieu to each person, more than 1 put an 'and' >2 places a comma
+#continues to put in names in control-d
+import inflect
+p = inflect.engine()
+
+names = []
+
+name_count = 0
+#forever loop
+while True:
+    try:
+        name = input('Name: ').capitalize()
+        names.append(name)
+
+    except EOFError:
+        print()
+        break
+
+final_list = p.join(names)
+print('Adieu, adieu, to', final_list)
